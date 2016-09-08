@@ -5,7 +5,18 @@ var bodyParser = require('body-parser');
 var random_maker = require('randomstring');
 
 // variable
-var movies = [];
+var movies = [
+	{
+		"id": "12345",
+		"title": "Caida Halcon Negro",
+		"year": 2001
+	},
+	{
+		"id": "67890",
+		"title": "Toy Story",
+		"year": 1998
+	}
+];
 
 // configurar bodyparser para obtener variables posts
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,6 +48,33 @@ router.post('/', function(request, response) {
 	movies.push(new_movie);
 	response.json({id: new_movie.id});
 });
+
+router.delete('/:id', function(request, response) {
+	var movie_id = request.params.id;
+	for(var i=0 ; i<movies.length ; ++i) {
+		if (movies[i].id == movie_id) {
+			movies.splice(i, 1);
+			response.json({});
+		}
+	}
+	response.statusCode = 204;
+	response.json({});
+});
+
+router.put('/:id', function(request, response) {
+	var movie_id = request.params.id;
+	for(var i=0 ; i<movies.length ; ++i) {
+		if (movies[i].id == movie_id) {
+			movies[i].title = request.body.title;
+			movies[i].year = request.body.year;
+			movies[i].genre = request.body.genre;
+			response.json({});
+		}
+	}
+	response.statusCode = 204;
+	response.json({});
+})
+
 
 // Se registran las rutas
 app.use('/api', router);
