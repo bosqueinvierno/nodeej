@@ -5,13 +5,18 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "nodejs server.js"
+    "start": "node server.js",
+    "debug": "node-debug server.js"
   },
   "author": "Matias Bensan A",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "express": "~4.0.0",
     "body-parser": "~1.0.1",
-    "randomstring": "1.1.5"
+    "express": "~4.0.0",
+    "randomstring": "1.1.5",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.8"
   }
 }

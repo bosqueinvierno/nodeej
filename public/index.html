@@ -1,8 +1,28 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Home</title>
+		<style type="text/css" href="css/bootstrap.min.css"></style>
 	</head>
 	<body>
-		<p>Hola</p>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<form action="#" id="form_tweets">
+						<p>Ingresa el nombre de un usuario</p>
+						<p><input type="text" id="user" value="MatiasBensanA"></p>
+						<br>
+						<input type="submit" class="btn btn-success">
+						<br>
+						<h3>Tweets</h3>
+						<ul id="user_tweets"></ul>
+					</form>
+				</div>
+				<div class="col-md-6 col-sm-6"></div>
+			</div>
+		</div>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>

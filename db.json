@@ -1,0 +1,10 @@
+{
+    "user": {
+        "email": "matias@laboratoria.cl",
+        "password": "1234",
+        "name": "Matias",
+        "lastname": "Bensan"
+    },
+    "movies": [
+    ]
+}
